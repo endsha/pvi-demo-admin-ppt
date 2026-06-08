@@ -10,6 +10,13 @@ export const themeTokens = {
 
 export const antdTheme: ThemeConfig = {
   token: themeTokens,
+  components: {
+    Layout: {
+      headerBg: '#ffffff',
+      headerHeight: 56,
+      siderBg: '#ffffff',
+    },
+  },
 }
 
 // Chart palette (shared by both chart components)

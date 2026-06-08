@@ -8,11 +8,11 @@ const { Header, Sider, Content } = Layout
 export function AdminLayout() {
   return (
     <Layout className="min-h-screen">
-      <Header className="!h-14 !bg-white px-0 shadow-sm" style={{ lineHeight: 'normal' }}>
+      <Header className="px-0 shadow-sm">
         <Topbar />
       </Header>
       <Layout>
-        <Sider width={240} theme="light" className="!bg-white">
+        <Sider width={240} theme="light">
           <SidebarNav />
         </Sider>
         <Content className="p-6">
