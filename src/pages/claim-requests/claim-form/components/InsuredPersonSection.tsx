@@ -1,7 +1,11 @@
 import { Col, Form, Input, Row, Select } from 'antd'
-import { customerOptions, findCustomer, genderOptions } from '../new-claim-request-form'
+import { customerOptions, findCustomer, genderOptions } from '../claim-form'
 
-export function InsuredPersonSection() {
+interface InsuredPersonSectionProps {
+  showCustomerSearch?: boolean
+}
+
+export function InsuredPersonSection({ showCustomerSearch = true }: InsuredPersonSectionProps) {
   const form = Form.useFormInstance()
   const idNumber = Form.useWatch<string | undefined>('idNumber', form)
   const dob = Form.useWatch<string | undefined>('dob', form)
@@ -27,21 +31,23 @@ export function InsuredPersonSection() {
         Thông tin về người được bảo hiểm
       </h2>
       <Row gutter={[16, 0]}>
-        <Col xs={24}>
-          <Form.Item
-            label="Tìm thông tin khách hàng"
-            name="customerSearch"
-            rules={[{ required: true, message: 'Vui lòng chọn khách hàng' }]}
-          >
-            <Select
-              showSearch
-              optionFilterProp="label"
-              options={customerOptions}
-              onChange={handleSelectCustomer}
-              placeholder="Nhập số hợp đồng nguyên tắc, số điện thoại hoặc mã tài xế GSM để tìm kiếm"
-            />
-          </Form.Item>
-        </Col>
+        {showCustomerSearch && (
+          <Col xs={24}>
+            <Form.Item
+              label="Tìm thông tin khách hàng"
+              name="customerSearch"
+              rules={[{ required: true, message: 'Vui lòng chọn khách hàng' }]}
+            >
+              <Select
+                showSearch
+                optionFilterProp="label"
+                options={customerOptions}
+                onChange={handleSelectCustomer}
+                placeholder="Nhập số hợp đồng nguyên tắc, số điện thoại hoặc mã tài xế GSM để tìm kiếm"
+              />
+            </Form.Item>
+          </Col>
+        )}
 
         <Col xs={24} md={8}>
           <Form.Item
