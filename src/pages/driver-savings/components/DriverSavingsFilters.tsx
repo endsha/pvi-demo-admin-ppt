@@ -26,7 +26,9 @@ const initialValues: FormShape = {
   plate: '',
   driverCode: '',
   effectiveRange: null,
-  createdRange: [dayjs(DEFAULT_FILTERS.createdRange![0]), dayjs(DEFAULT_FILTERS.createdRange![1])],
+  createdRange: DEFAULT_FILTERS.createdRange
+    ? [dayjs(DEFAULT_FILTERS.createdRange[0]), dayjs(DEFAULT_FILTERS.createdRange[1])]
+    : null,
   status: DEFAULT_FILTERS.status,
 }
 
