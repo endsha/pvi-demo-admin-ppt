@@ -18,7 +18,18 @@ import { useLocation, useNavigate } from 'react-router-dom'
 const items: MenuProps['items'] = [
   { key: '/', icon: <AppstoreOutlined />, label: 'Bảng điều khiển' },
   { key: 'muc-luc', icon: <UnorderedListOutlined />, label: 'Mục lục', children: [] },
-  { key: 'don-bao-hiem', icon: <FileProtectOutlined />, label: 'Đơn bảo hiểm', children: [] },
+  {
+    key: 'don-bao-hiem',
+    icon: <FileProtectOutlined />,
+    label: 'Đơn bảo hiểm',
+    children: [
+      { key: '/don-bao-hiem/tat-ca', label: 'Tất cả Đơn bảo hiểm' },
+      { key: '/don-bao-hiem/tai-nan-hanh-khach-theo-chuyen', label: 'Tai nạn hành khách theo chuyến' },
+      { key: '/don-bao-hiem/bao-hiem-hang-hoa', label: 'Bảo hiểm hàng hoá' },
+      { key: '/don-bao-hiem/bao-hiem-tich-luy-tai-xe', label: 'Bảo hiểm tích lũy tài xế' },
+      { key: '/don-bao-hiem/bao-hiem-foodcare', label: 'Bảo hiểm FoodCare' },
+    ],
+  },
   { key: 'hop-dong', icon: <FileTextOutlined />, label: 'Hợp đồng nguyên tắc', children: [] },
   { key: 'yeu-cau-boi-thuong', icon: <SolutionOutlined />, label: 'Yêu cầu bồi thường', children: [] },
   { key: 'ho-so-boi-thuong', icon: <FolderOpenOutlined />, label: 'Hồ sơ bồi thường', children: [] },
@@ -42,6 +53,7 @@ export function SidebarNav() {
       mode="inline"
       items={items}
       selectedKeys={[pathname]}
+      defaultOpenKeys={['don-bao-hiem']}
       onClick={onClick}
       className="h-full border-r-0"
     />
