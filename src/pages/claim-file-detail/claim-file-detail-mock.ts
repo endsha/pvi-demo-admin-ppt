@@ -125,6 +125,7 @@ const defaultDetail: ClaimFileDetail = {
 }
 
 // Mock lookup: any id returns the single mock record (UI-only, no API).
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function findClaimFileDetail(_id?: string): ClaimFileDetail {
   return defaultDetail
 }
