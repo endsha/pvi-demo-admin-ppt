@@ -41,7 +41,17 @@ const items: MenuProps['items'] = [
       },
     ],
   },
-  { key: 'yeu-cau-boi-thuong', icon: <SolutionOutlined />, label: 'Yêu cầu bồi thường', children: [] },
+  {
+    key: 'yeu-cau-boi-thuong',
+    icon: <SolutionOutlined />,
+    label: 'Yêu cầu bồi thường',
+    children: [
+      {
+        key: '/yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe',
+        label: 'Bảo hiểm tích lũy tài xế',
+      },
+    ],
+  },
   { key: 'ho-so-boi-thuong', icon: <FolderOpenOutlined />, label: 'Hồ sơ bồi thường', children: [] },
   { key: '/yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn' },
   { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
@@ -72,7 +82,7 @@ export function SidebarNav() {
       mode="inline"
       items={items}
       selectedKeys={[pathname]}
-      defaultOpenKeys={['don-bao-hiem', 'hop-dong', 'bao-cao-power-bi']}
+      defaultOpenKeys={['don-bao-hiem', 'hop-dong', 'yeu-cau-boi-thuong', 'bao-cao-power-bi']}
       onClick={onClick}
       className="h-full border-r-0"
     />
