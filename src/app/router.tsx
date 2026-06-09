@@ -7,6 +7,7 @@ import { ReportsListPage } from '../pages/reports/ReportsListPage'
 import { InvoiceRequestsListPage } from '../pages/invoice-requests/InvoiceRequestsListPage'
 import { GsmSearchPage } from '../pages/gsm-search/GsmSearchPage'
 import { AccountSettingsPage } from '../pages/account-settings/AccountSettingsPage'
+import { DriverSavingsListPage } from '../pages/driver-savings/DriverSavingsListPage'
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
         element: <PoliciesListPage />,
       },
       { path: 'don-bao-hiem/bao-hiem-hang-hoa', element: <PlaceholderPage title="Bảo hiểm hàng hoá" /> },
-      { path: 'don-bao-hiem/bao-hiem-tich-luy-tai-xe', element: <PlaceholderPage title="Bảo hiểm tích lũy tài xế" /> },
+      { path: 'don-bao-hiem/bao-hiem-tich-luy-tai-xe', element: <DriverSavingsListPage /> },
       { path: 'don-bao-hiem/bao-hiem-foodcare', element: <PlaceholderPage title="Bảo hiểm FoodCare" /> },
       { path: 'tra-cuu-gsm', element: <GsmSearchPage /> },
       { path: 'yeu-cau-hoa-don', element: <InvoiceRequestsListPage /> },
