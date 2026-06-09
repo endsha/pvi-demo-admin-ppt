@@ -30,7 +30,17 @@ const items: MenuProps['items'] = [
       { key: '/don-bao-hiem/bao-hiem-foodcare', label: 'Bảo hiểm FoodCare' },
     ],
   },
-  { key: 'hop-dong', icon: <FileTextOutlined />, label: 'Hợp đồng nguyên tắc', children: [] },
+  {
+    key: 'hop-dong',
+    icon: <FileTextOutlined />,
+    label: 'Hợp đồng nguyên tắc',
+    children: [
+      {
+        key: '/hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe',
+        label: 'Bảo hiểm tích luỹ tài xế',
+      },
+    ],
+  },
   { key: 'yeu-cau-boi-thuong', icon: <SolutionOutlined />, label: 'Yêu cầu bồi thường', children: [] },
   { key: 'ho-so-boi-thuong', icon: <FolderOpenOutlined />, label: 'Hồ sơ bồi thường', children: [] },
   { key: '/yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn' },
@@ -62,7 +72,7 @@ export function SidebarNav() {
       mode="inline"
       items={items}
       selectedKeys={[pathname]}
-      defaultOpenKeys={['don-bao-hiem', 'bao-cao-power-bi']}
+      defaultOpenKeys={['don-bao-hiem', 'hop-dong', 'bao-cao-power-bi']}
       onClick={onClick}
       className="h-full border-r-0"
     />

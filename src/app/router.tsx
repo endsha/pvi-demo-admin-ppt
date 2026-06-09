@@ -8,6 +8,7 @@ import { InvoiceRequestsListPage } from '../pages/invoice-requests/InvoiceReques
 import { GsmSearchPage } from '../pages/gsm-search/GsmSearchPage'
 import { AccountSettingsPage } from '../pages/account-settings/AccountSettingsPage'
 import { DriverSavingsListPage } from '../pages/driver-savings/DriverSavingsListPage'
+import { MasterPoliciesListPage } from '../pages/master-policies/MasterPoliciesListPage'
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       { path: 'bao-cao-power-bi/bao-cao-cong-khai', element: <PlaceholderPage title="Báo cáo công khai" /> },
       { path: 'bao-cao-power-bi/bao-cao-doanh-thu', element: <PlaceholderPage title="Báo cáo doanh thu" /> },
       { path: 'cai-dat-tai-khoan', element: <AccountSettingsPage /> },
+      {
+        path: 'hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe',
+        element: <MasterPoliciesListPage />,
+      },
     ],
   },
 ])
