@@ -13,6 +13,7 @@ import { MasterPolicyDetailPage } from '../pages/master-policy-detail/MasterPoli
 import { ClaimRequestsListPage } from '../pages/claim-requests/ClaimRequestsListPage'
 import { NewClaimRequestPage } from '../pages/claim-requests/new-claim-request/NewClaimRequestPage'
 import { UpdateClaimRequestPage } from '../pages/claim-requests/update-claim-request/UpdateClaimRequestPage'
+import { ClaimFilesListPage } from '../pages/claim-files/ClaimFilesListPage'
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,23 @@ export const router = createBrowserRouter([
       {
         path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/:id/giay-ycbt',
         element: <PlaceholderPage title="Giấy yêu cầu bồi thường" />,
+      },
+      { path: 'ho-so-boi-thuong/tat-ca', element: <PlaceholderPage title="Tất cả hồ sơ bồi thường" /> },
+      {
+        path: 'ho-so-boi-thuong/tai-nan-hanh-khach-theo-chuyen',
+        element: <PlaceholderPage title="Tai nạn hành khách theo chuyến" />,
+      },
+      {
+        path: 'ho-so-boi-thuong/bao-hiem-hang-hoa',
+        element: <PlaceholderPage title="Bảo hiểm hàng hoá" />,
+      },
+      {
+        path: 'ho-so-boi-thuong/bao-hiem-tich-luy-tai-xe',
+        element: <ClaimFilesListPage />,
+      },
+      {
+        path: 'ho-so-boi-thuong/bao-hiem-tich-luy-tai-xe/:id',
+        element: <PlaceholderPage title="Chi tiết hồ sơ bồi thường" />,
       },
     ],
   },
