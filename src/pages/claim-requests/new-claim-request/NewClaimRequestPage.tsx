@@ -1,18 +1,18 @@
 import { Breadcrumb, Button, Form, message } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import { initialValues, type NewClaimRequestForm } from './new-claim-request-form'
-import { GeneralInfoSection } from './components/GeneralInfoSection'
-import { InsuredPersonSection } from './components/InsuredPersonSection'
-import { AccidentInfoSection } from './components/AccidentInfoSection'
-import { ClaimAmountSection } from './components/ClaimAmountSection'
-import { BeneficiarySection } from './components/BeneficiarySection'
+import { initialValues, type ClaimForm } from '../claim-form/claim-form'
+import { GeneralInfoSection } from '../claim-form/components/GeneralInfoSection'
+import { InsuredPersonSection } from '../claim-form/components/InsuredPersonSection'
+import { AccidentInfoSection } from '../claim-form/components/AccidentInfoSection'
+import { ClaimAmountSection } from '../claim-form/components/ClaimAmountSection'
+import { BeneficiarySection } from '../claim-form/components/BeneficiarySection'
 
 const LIST_PATH = '/yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe'
 
 export function NewClaimRequestPage() {
   const navigate = useNavigate()
   const [messageApi, contextHolder] = message.useMessage()
-  const [form] = Form.useForm<NewClaimRequestForm>()
+  const [form] = Form.useForm<ClaimForm>()
 
   const handleFinish = () => {
     // UI only: no API call. Validation already passed via onFinish.
