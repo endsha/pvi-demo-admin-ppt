@@ -19,8 +19,9 @@ export const DEFAULT_FILTERS: ReportFilters = {
 }
 
 function hasText(value: string, query: string): boolean {
-  if (!query.trim()) return true
-  return value.toLowerCase().includes(query.trim().toLowerCase())
+  const q = query.trim()
+  if (!q) return true
+  return value.toLowerCase().includes(q.toLowerCase())
 }
 
 export function applyFilters(rows: ReportRow[], f: ReportFilters): ReportRow[] {

@@ -31,11 +31,6 @@ export const statusOptions = (Object.keys(STATUS_CONFIG) as ReportStatus[]).map(
   label: STATUS_CONFIG[value].label,
 }))
 
-export const accessOptions = (Object.keys(ACCESS_CONFIG) as ReportAccess[]).map((value) => ({
-  value,
-  label: ACCESS_CONFIG[value].label,
-}))
-
 // Mock assumption: report categories aren't visible in the empty-table screenshot —
 // these are placeholders so the advanced "Loại báo cáo" filter functions.
 export const reportTypeOptions = ['Doanh thu', 'Bồi thường', 'Tổng hợp', 'Vận hành'].map((v) => ({
