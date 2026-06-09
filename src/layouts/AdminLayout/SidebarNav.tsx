@@ -33,7 +33,7 @@ const items: MenuProps['items'] = [
   { key: 'hop-dong', icon: <FileTextOutlined />, label: 'Hợp đồng nguyên tắc', children: [] },
   { key: 'yeu-cau-boi-thuong', icon: <SolutionOutlined />, label: 'Yêu cầu bồi thường', children: [] },
   { key: 'ho-so-boi-thuong', icon: <FolderOpenOutlined />, label: 'Hồ sơ bồi thường', children: [] },
-  { key: 'yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn', children: [] },
+  { key: '/yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn' },
   { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
   { key: '/tra-cuu-gsm', icon: <SearchOutlined />, label: 'Tra cứu GSM PPT' },
   {
