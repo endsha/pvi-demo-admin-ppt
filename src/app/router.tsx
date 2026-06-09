@@ -9,6 +9,7 @@ import { GsmSearchPage } from '../pages/gsm-search/GsmSearchPage'
 import { AccountSettingsPage } from '../pages/account-settings/AccountSettingsPage'
 import { DriverSavingsListPage } from '../pages/driver-savings/DriverSavingsListPage'
 import { MasterPoliciesListPage } from '../pages/master-policies/MasterPoliciesListPage'
+import { MasterPolicyDetailPage } from '../pages/master-policy-detail/MasterPolicyDetailPage'
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: 'hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe',
         element: <MasterPoliciesListPage />,
+      },
+      {
+        path: 'hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe/:id',
+        element: <MasterPolicyDetailPage />,
       },
     ],
   },

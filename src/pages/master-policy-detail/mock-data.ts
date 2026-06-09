@@ -127,6 +127,7 @@ export const masterPolicyDetail: MasterPolicyDetail = {
 }
 
 // Mock lookup: any id returns the single mock record (UI-only, no API).
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function getMasterPolicyDetail(_id: string): MasterPolicyDetail {
   return masterPolicyDetail
 }
