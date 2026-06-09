@@ -14,6 +14,7 @@ import { ClaimRequestsListPage } from '../pages/claim-requests/ClaimRequestsList
 import { NewClaimRequestPage } from '../pages/claim-requests/new-claim-request/NewClaimRequestPage'
 import { UpdateClaimRequestPage } from '../pages/claim-requests/update-claim-request/UpdateClaimRequestPage'
 import { ClaimFilesListPage } from '../pages/claim-files/ClaimFilesListPage'
+import { ClaimFileDetailPage } from '../pages/claim-file-detail/ClaimFileDetailPage'
 
 export const router = createBrowserRouter([
   {
@@ -74,7 +75,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'ho-so-boi-thuong/bao-hiem-tich-luy-tai-xe/:id',
-        element: <PlaceholderPage title="Chi tiết hồ sơ bồi thường" />,
+        element: <ClaimFileDetailPage />,
       },
     ],
   },

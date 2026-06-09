@@ -2,7 +2,8 @@ import { Table } from 'antd'
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 import type { ColumnsType } from 'antd/es/table'
 import { BenefitTable } from './BenefitTable'
-import { formatDateTimeSeconds, formatMoney, type AccumulationTrip } from '../mock-data'
+import { formatDateTimeSeconds, formatMoney } from './format'
+import type { AccumulationTrip } from './types'
 
 function SortCaret() {
   return (
@@ -24,9 +25,10 @@ function HeaderWithSort({ label }: { label: string }) {
 
 interface AccumulationTableProps {
   trips: AccumulationTrip[]
+  title?: string
 }
 
-export function AccumulationTable({ trips }: AccumulationTableProps) {
+export function AccumulationTable({ trips, title = 'Bảng Danh sách đơn tích luỹ' }: AccumulationTableProps) {
   const columns: ColumnsType<AccumulationTrip> = [
     { title: 'STT', key: 'stt', width: 60, render: (_v, _row, index) => index + 1 },
     { title: <HeaderWithSort label="ID chuyến xe GSM" />, dataIndex: 'gsmTripId', key: 'gsmTripId' },
@@ -64,7 +66,7 @@ export function AccumulationTable({ trips }: AccumulationTableProps) {
 
   return (
     <section>
-      <h2 className="mb-4 text-base font-semibold text-gray-800">Bảng Danh sách đơn tích luỹ</h2>
+      <h2 className="mb-4 text-base font-semibold text-gray-800">{title}</h2>
       <Table<AccumulationTrip>
         rowKey="id"
         columns={columns}

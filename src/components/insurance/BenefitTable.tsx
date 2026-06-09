@@ -1,6 +1,6 @@
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import type { BenefitRow } from '../mock-data'
+import type { BenefitRow } from './types'
 
 const renderDash = (value: string | null) => value ?? '-'
 

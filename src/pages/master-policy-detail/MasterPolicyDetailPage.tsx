@@ -2,8 +2,8 @@ import { Breadcrumb } from 'antd'
 import { useParams } from 'react-router-dom'
 import { getMasterPolicyDetail } from './mock-data'
 import { GeneralInfoCard } from './components/GeneralInfoCard'
-import { BenefitTable } from './components/BenefitTable'
-import { AccumulationTable } from './components/AccumulationTable'
+import { BenefitTable } from '../../components/insurance/BenefitTable'
+import { AccumulationTable } from '../../components/insurance/AccumulationTable'
 
 export function MasterPolicyDetailPage() {
   const { id = '' } = useParams()
