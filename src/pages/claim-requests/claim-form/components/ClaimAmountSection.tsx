@@ -1,5 +1,5 @@
 import { Checkbox, Col, Form, InputNumber, Row } from 'antd'
-import { claimCaseOptions } from '../new-claim-request-form'
+import { claimCaseOptions } from '../claim-form'
 
 export function ClaimAmountSection() {
   return (

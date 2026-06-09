@@ -2,7 +2,7 @@ import type { Dayjs } from 'dayjs'
 
 export type ClaimCaseKey = 'death' | 'permanent_disability' | 'medical' | 'hospital_allowance'
 
-export interface NewClaimRequestForm {
+export interface ClaimForm {
   receivingSource?: string
   customerSearch?: string
   driverCode?: string
@@ -112,6 +112,6 @@ export function findCustomer(value?: string): MockCustomer | undefined {
   return mockCustomers.find((c) => c.value === value)
 }
 
-export const initialValues: Partial<NewClaimRequestForm> = {
+export const initialValues: Partial<ClaimForm> = {
   claimCases: [],
 }

@@ -12,6 +12,7 @@ import { MasterPoliciesListPage } from '../pages/master-policies/MasterPoliciesL
 import { MasterPolicyDetailPage } from '../pages/master-policy-detail/MasterPolicyDetailPage'
 import { ClaimRequestsListPage } from '../pages/claim-requests/ClaimRequestsListPage'
 import { NewClaimRequestPage } from '../pages/claim-requests/new-claim-request/NewClaimRequestPage'
+import { UpdateClaimRequestPage } from '../pages/claim-requests/update-claim-request/UpdateClaimRequestPage'
 
 export const router = createBrowserRouter([
   {
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/:id/cap-nhat',
-        element: <PlaceholderPage title="Cập nhật Yêu cầu bồi thường" />,
+        element: <UpdateClaimRequestPage />,
       },
       {
         path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/:id/giay-ycbt',

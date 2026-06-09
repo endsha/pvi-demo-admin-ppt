@@ -1,5 +1,5 @@
 import { Col, Form, Row, Select } from 'antd'
-import { receivingSourceOptions } from '../new-claim-request-form'
+import { receivingSourceOptions } from '../claim-form'
 
 export function GeneralInfoSection() {
   return (
