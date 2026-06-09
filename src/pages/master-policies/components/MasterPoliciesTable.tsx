@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Button, Table } from 'antd'
+import { useNavigate } from 'react-router-dom'
 import {
   ColumnHeightOutlined,
   ReloadOutlined,
@@ -27,6 +28,10 @@ function Field({ label, value }: { label: string; value: ReactNode }) {
 }
 
 export function MasterPoliciesTable({ rows, page, onPageChange }: MasterPoliciesTableProps) {
+  const navigate = useNavigate()
+  const goToDetail = (id: string) =>
+    navigate(`/hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe/${id}`)
+
   const columns: ColumnsType<MasterPolicyRow> = [
     {
       title: 'STT',
@@ -71,8 +76,8 @@ export function MasterPoliciesTable({ rows, page, onPageChange }: MasterPolicies
     {
       title: 'Liên kết',
       key: 'link',
-      render: () => (
-        <Button type="link" className="px-0">
+      render: (_v, row) => (
+        <Button type="link" className="px-0" onClick={() => goToDetail(row.id)}>
           Xem hợp đồng nguyên tắc
         </Button>
       ),
@@ -81,7 +86,9 @@ export function MasterPoliciesTable({ rows, page, onPageChange }: MasterPolicies
       title: 'Hành động',
       key: 'action',
       width: 100,
-      render: () => <Button type="primary" icon={<ZoomInOutlined />} />,
+      render: (_v, row) => (
+        <Button type="primary" icon={<ZoomInOutlined />} onClick={() => goToDetail(row.id)} />
+      ),
     },
   ]
 
