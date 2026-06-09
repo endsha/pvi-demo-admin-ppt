@@ -76,6 +76,25 @@ export function ClaimFileDetailPage() {
                     </h2>
                     <InfoTable items={detail.accident} />
                   </section>
+                  <section>
+                    <h2 className="mb-4 text-base font-semibold text-gray-800">Tải ảnh kèm</h2>
+                    {detail.attachments.length > 0 ? (
+                      <div className="flex flex-wrap gap-3">
+                        {detail.attachments.map((src) => (
+                          <img
+                            key={src}
+                            src={src}
+                            alt="Ảnh kèm hồ sơ"
+                            className="h-24 w-24 rounded-md border border-gray-200 object-cover"
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="flex h-28 items-center justify-center rounded-md border border-dashed border-gray-300 text-sm text-gray-400">
+                        Chưa có ảnh đính kèm
+                      </div>
+                    )}
+                  </section>
                 </div>
               ),
             },
