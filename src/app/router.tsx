@@ -3,6 +3,7 @@ import { AdminLayout } from '../layouts/AdminLayout/AdminLayout'
 import { DashboardPage } from '../pages/dashboard/DashboardPage'
 import { PlaceholderPage } from '../pages/placeholder/PlaceholderPage'
 import { PoliciesListPage } from '../pages/policies/PoliciesListPage'
+import { ReportsListPage } from '../pages/reports/ReportsListPage'
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ export const router = createBrowserRouter([
       { path: 'don-bao-hiem/bao-hiem-tich-luy-tai-xe', element: <PlaceholderPage title="Bảo hiểm tích lũy tài xế" /> },
       { path: 'don-bao-hiem/bao-hiem-foodcare', element: <PlaceholderPage title="Bảo hiểm FoodCare" /> },
       { path: 'tra-cuu-gsm', element: <PlaceholderPage title="Tra cứu GSM PPT" /> },
-      { path: 'bao-cao-power-bi', element: <PlaceholderPage title="Báo cáo Power BI" /> },
+      { path: 'bao-cao-power-bi/quan-ly-bao-cao', element: <ReportsListPage /> },
+      { path: 'bao-cao-power-bi/bao-cao-cong-khai', element: <PlaceholderPage title="Báo cáo công khai" /> },
+      { path: 'bao-cao-power-bi/bao-cao-doanh-thu', element: <PlaceholderPage title="Báo cáo doanh thu" /> },
       { path: 'cai-dat-tai-khoan', element: <PlaceholderPage title="Cài đặt tài khoản" /> },
     ],
   },

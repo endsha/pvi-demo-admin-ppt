@@ -36,7 +36,16 @@ const items: MenuProps['items'] = [
   { key: 'yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn', children: [] },
   { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
   { key: '/tra-cuu-gsm', icon: <SearchOutlined />, label: 'Tra cứu GSM PPT' },
-  { key: '/bao-cao-power-bi', icon: <BarChartOutlined />, label: 'Báo cáo Power BI' },
+  {
+    key: 'bao-cao-power-bi',
+    icon: <BarChartOutlined />,
+    label: 'Báo cáo Power BI',
+    children: [
+      { key: '/bao-cao-power-bi/quan-ly-bao-cao', label: 'Quản lý báo cáo' },
+      { key: '/bao-cao-power-bi/bao-cao-cong-khai', label: 'Báo cáo công khai' },
+      { key: '/bao-cao-power-bi/bao-cao-doanh-thu', label: 'Báo cáo doanh thu' },
+    ],
+  },
   { key: '/cai-dat-tai-khoan', icon: <UserOutlined />, label: 'Cài đặt tài khoản' },
 ]
 
@@ -53,7 +62,7 @@ export function SidebarNav() {
       mode="inline"
       items={items}
       selectedKeys={[pathname]}
-      defaultOpenKeys={['don-bao-hiem']}
+      defaultOpenKeys={['don-bao-hiem', 'bao-cao-power-bi']}
       onClick={onClick}
       className="h-full border-r-0"
     />
