@@ -1,4 +1,4 @@
-import { App, Breadcrumb, Button, Form } from 'antd'
+import { Breadcrumb, Button, Form, message } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { initialValues, type NewClaimRequestForm } from './new-claim-request-form'
 import { GeneralInfoSection } from './components/GeneralInfoSection'
@@ -11,12 +11,12 @@ const LIST_PATH = '/yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe'
 
 export function NewClaimRequestPage() {
   const navigate = useNavigate()
-  const { message } = App.useApp()
+  const [messageApi, contextHolder] = message.useMessage()
   const [form] = Form.useForm<NewClaimRequestForm>()
 
-  const handleSave = () => {
+  const handleFinish = () => {
     // UI only: no API call. Validation already passed via onFinish.
-    message.success('Đã lưu yêu cầu bồi thường')
+    messageApi.success('Đã lưu yêu cầu bồi thường')
     navigate(LIST_PATH)
   }
 
@@ -24,6 +24,7 @@ export function NewClaimRequestPage() {
 
   return (
     <div className="flex flex-col gap-4">
+      {contextHolder}
       <div className="flex flex-col gap-1">
         <Breadcrumb
           items={[
@@ -40,7 +41,7 @@ export function NewClaimRequestPage() {
         layout="vertical"
         requiredMark
         initialValues={initialValues}
-        onFinish={handleSave}
+        onFinish={handleFinish}
         className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-white p-6 shadow-sm"
       >
         <GeneralInfoSection />

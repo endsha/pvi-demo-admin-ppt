@@ -43,6 +43,7 @@ export function BeneficiarySection() {
         </Col>
 
         <Col xs={24}>
+          {/* Display-only upload (UI mock): not tracked in form state, no name on purpose */}
           <Form.Item label="Tài liệu đính kèm">
             <Dragger
               multiple

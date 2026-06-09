@@ -1,5 +1,7 @@
 import type { Dayjs } from 'dayjs'
 
+export type ClaimCaseKey = 'death' | 'permanent_disability' | 'medical' | 'hospital_allowance'
+
 export interface NewClaimRequestForm {
   receivingSource?: string
   customerSearch?: string
@@ -22,7 +24,7 @@ export interface NewClaimRequestForm {
   fromDate?: Dayjs
   toDate?: Dayjs
   claimAmount?: number
-  claimCases?: string[]
+  claimCases?: ClaimCaseKey[]
   beneficiary?: string
   accountNumber?: string
   bankName?: string
@@ -50,12 +52,12 @@ export const receivingSourceOptions = [
 ]
 
 export const genderOptions = [
-  { value: 'Nam', label: 'Nam' },
-  { value: 'Nữ', label: 'Nữ' },
-  { value: 'Khác', label: 'Khác' },
+  { value: 'male', label: 'Nam' },
+  { value: 'female', label: 'Nữ' },
+  { value: 'other', label: 'Khác' },
 ]
 
-export const claimCaseOptions = [
+export const claimCaseOptions: { value: ClaimCaseKey; label: string }[] = [
   { value: 'death', label: 'Tử vong' },
   { value: 'permanent_disability', label: 'Thương tật vĩnh viễn' },
   { value: 'medical', label: 'Chi phí y tế' },
@@ -68,7 +70,7 @@ export const mockCustomers: MockCustomer[] = [
     label: 'GSM-000123 — Nguyễn Văn An — 0901234567',
     driverCode: 'GSM-000123',
     fullName: 'Nguyễn Văn An',
-    gender: 'Nam',
+    gender: 'male',
     idNumber: '079090001234',
     dob: '12/05/1990',
     phone: '0901234567',
@@ -80,7 +82,7 @@ export const mockCustomers: MockCustomer[] = [
     label: 'GSM-000456 — Trần Thị Bình — 0912345678',
     driverCode: 'GSM-000456',
     fullName: 'Trần Thị Bình',
-    gender: 'Nữ',
+    gender: 'female',
     idNumber: '079185004567',
     dob: '03/11/1985',
     phone: '0912345678',
@@ -92,7 +94,7 @@ export const mockCustomers: MockCustomer[] = [
     label: 'GSM-000789 — Lê Hoàng Cường — 0987654321',
     driverCode: 'GSM-000789',
     fullName: 'Lê Hoàng Cường',
-    gender: 'Nam',
+    gender: 'male',
     idNumber: '079092007890',
     dob: '27/08/1992',
     phone: '0987654321',
