@@ -1,23 +1,5 @@
-export interface BenefitRow {
-  key: string
-  name: string
-  sub?: string
-  hanMuc: string | null
-  daChiTra: string | null
-  uocBoiThuong: string | null
-  hanMucConLai: string | null
-}
-
-export interface AccumulationTrip {
-  id: string
-  gsmTripId: string // ID chuyến xe GSM
-  transferContractNo: string // Mã hợp đồng bảo hiểm chuyến
-  completedAt: string // ISO — Thời gian hoàn thành chuyến
-  effectiveStart: string // ISO — Thời gian bắt đầu bảo hiểm
-  effectiveEnd: string // ISO — Thời gian kết thúc bảo hiểm
-  sumInsured: number // STBH/ chuyến
-  benefits: BenefitRow[]
-}
+import type { BenefitRow, AccumulationTrip } from '../../components/insurance/types'
+import { formatMoney } from '../../components/insurance/format'
 
 export interface MasterPolicyDetail {
   id: string
@@ -30,16 +12,6 @@ export interface MasterPolicyDetail {
   accumulationPeriod: string | null // STBH tích lũy trong thời gian
   benefits: BenefitRow[]
   trips: AccumulationTrip[]
-}
-
-export function formatMoney(n: number): string {
-  return n.toLocaleString('vi-VN') // 250.000
-}
-
-export function formatDateTimeSeconds(iso: string): string {
-  const d = new Date(iso)
-  const pad = (x: number) => String(x).padStart(2, '0')
-  return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
 }
 
 function money(n: number): string {
