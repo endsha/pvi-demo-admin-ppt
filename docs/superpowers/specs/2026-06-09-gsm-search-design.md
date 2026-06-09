@@ -128,8 +128,15 @@ across the product set so each filter exercises a non-empty result.
 
 ## 10. Testing
 
-Per web testing rules, prioritize visual + behavioral checks:
-- Form renders with exact labels/placeholders; required validation fires when `Loại bảo hiểm` is cleared.
-- Submitting with a known phone returns matching rows; an unknown phone shows the no-result state.
-- Idle state hides the result area.
-- Unit-test `applySearch` (substring/AND/`Tất cả` rules) as the one piece of real logic.
+This project has **no unit-test runner** (no vitest/jest); `policies`, `invoice-requests`, and
+`reports` all shipped verified by `build` + `lint` + Playwright visual checks. This page follows
+that convention — no test framework is introduced.
+
+Verification per the agreed approach:
+- After each task: `npm run build` (tsc + vite) and `npm run lint` must pass.
+- Full-flow visual check with Playwright on `/tra-cuu-gsm`:
+  - Form renders with exact labels/placeholders and the `*` on `Loại bảo hiểm`.
+  - Required validation fires when `Loại bảo hiểm` is cleared and submit is pressed.
+  - Idle state shows no result area.
+  - Submitting with a known phone returns matching rows in the table.
+  - An unknown phone shows the `Không tìm thấy thông tin phù hợp` empty state.
