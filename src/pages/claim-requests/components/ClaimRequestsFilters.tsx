@@ -101,8 +101,7 @@ export function ClaimRequestsFilters({ onSearch, onReset }: ClaimRequestsFilters
             <Select options={statusOptions} allowClear placeholder="Vui lòng chọn" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12} />
-        <Col xs={24} md={6} className="flex items-end justify-end gap-2 pt-3 md:pt-0">
+        <Col xs={24} md={6} className="ml-auto flex items-end justify-end gap-2 pt-3 md:pt-0">
           <Button onClick={handleReset}>Làm lại</Button>
           <Button type="primary" onClick={handleSearch}>
             Tìm kiếm

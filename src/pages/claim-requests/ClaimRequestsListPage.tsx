@@ -33,6 +33,10 @@ export function ClaimRequestsListPage() {
     setPage(1)
   }
 
+  const handleAdd = () => navigate(`${BASE_PATH}/them-moi`)
+  const handleView = (id: string) => navigate(`${BASE_PATH}/${id}/giay-ycbt`)
+  const handleEdit = (id: string) => navigate(`${BASE_PATH}/${id}/cap-nhat`)
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
@@ -42,13 +46,13 @@ export function ClaimRequestsListPage() {
         <h1 className="text-xl font-semibold text-gray-800">Bảo hiểm tích lũy tài xế</h1>
       </div>
       <ClaimRequestsFilters onSearch={handleSearch} onReset={handleReset} />
-      <ClaimRequestsToolbar onAdd={() => navigate(`${BASE_PATH}/them-moi`)} />
+      <ClaimRequestsToolbar onAdd={handleAdd} />
       <ClaimRequestsTable
         rows={filteredRows}
         page={page}
         onPageChange={setPage}
-        onView={(id) => navigate(`${BASE_PATH}/${id}/giay-ycbt`)}
-        onEdit={(id) => navigate(`${BASE_PATH}/${id}/cap-nhat`)}
+        onView={handleView}
+        onEdit={handleEdit}
       />
     </div>
   )

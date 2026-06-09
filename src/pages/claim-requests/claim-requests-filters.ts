@@ -39,7 +39,7 @@ export function applyFilters(
   })
 
   return [...matched].sort((a, b) => {
-    const cmp = a.requestedAt.localeCompare(b.requestedAt)
+    const cmp = a.requestedAt < b.requestedAt ? -1 : a.requestedAt > b.requestedAt ? 1 : 0
     return filters.sort === 'newest' ? -cmp : cmp
   })
 }
