@@ -10,6 +10,7 @@ import { AccountSettingsPage } from '../pages/account-settings/AccountSettingsPa
 import { DriverSavingsListPage } from '../pages/driver-savings/DriverSavingsListPage'
 import { MasterPoliciesListPage } from '../pages/master-policies/MasterPoliciesListPage'
 import { MasterPolicyDetailPage } from '../pages/master-policy-detail/MasterPolicyDetailPage'
+import { ClaimRequestsListPage } from '../pages/claim-requests/ClaimRequestsListPage'
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,22 @@ export const router = createBrowserRouter([
       {
         path: 'hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe/:id',
         element: <MasterPolicyDetailPage />,
+      },
+      {
+        path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe',
+        element: <ClaimRequestsListPage />,
+      },
+      {
+        path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/them-moi',
+        element: <PlaceholderPage title="Thêm mới Yêu cầu bồi thường" />,
+      },
+      {
+        path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/:id/cap-nhat',
+        element: <PlaceholderPage title="Cập nhật Yêu cầu bồi thường" />,
+      },
+      {
+        path: 'yeu-cau-boi-thuong/bao-hiem-tich-luy-tai-xe/:id/giay-ycbt',
+        element: <PlaceholderPage title="Giấy yêu cầu bồi thường" />,
       },
     ],
   },
