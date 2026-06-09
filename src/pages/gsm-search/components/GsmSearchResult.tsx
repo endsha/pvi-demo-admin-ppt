@@ -3,6 +3,8 @@ import type { ColumnsType } from 'antd/es/table'
 import type { GsmRecord } from '../mock-data'
 import { STATUS_CONFIG, formatPremium, formatDateTime } from '../../policies/mock-data'
 
+const PAGE_SIZE = 10
+
 interface GsmSearchResultProps {
   records: GsmRecord[]
 }
@@ -48,7 +50,7 @@ export function GsmSearchResult({ records }: GsmSearchResultProps) {
           rowKey="id"
           columns={columns}
           dataSource={records}
-          pagination={{ pageSize: 10, hideOnSinglePage: true, showSizeChanger: false }}
+          pagination={{ pageSize: PAGE_SIZE, hideOnSinglePage: true, showSizeChanger: false }}
           scroll={{ x: 'max-content' }}
         />
       )}

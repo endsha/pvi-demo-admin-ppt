@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { GsmSearchForm } from './components/GsmSearchForm'
 import { GsmSearchResult } from './components/GsmSearchResult'
 import { gsmRecords, type GsmRecord } from './mock-data'
@@ -12,10 +12,14 @@ const SEARCH_DELAY_MS = 400
 export function GsmSearchPage() {
   const [status, setStatus] = useState<SearchStatus>('idle')
   const [results, setResults] = useState<GsmRecord[]>([])
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
+
+  useEffect(() => () => clearTimeout(timerRef.current), [])
 
   const handleSearch = (criteria: GsmSearchCriteria) => {
     setStatus('loading')
-    setTimeout(() => {
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
       setResults(applySearch(gsmRecords, criteria))
       setStatus('done')
     }, SEARCH_DELAY_MS)
