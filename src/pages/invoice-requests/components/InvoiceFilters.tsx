@@ -47,13 +47,13 @@ export function InvoiceFilters({ onSearch, onReset }: InvoiceFiltersProps) {
               <Select options={sortOptions} />
             </Form.Item>
           </Col>
-          <Col xs={24} md={8} className="flex items-end justify-end gap-2">
-            <Button onClick={handleReset}>Làm lại</Button>
-            <Button type="primary" onClick={handleSearch}>
-              Tìm kiếm
-            </Button>
-          </Col>
         </Row>
+        <div className="mt-4 flex justify-end gap-2">
+          <Button onClick={handleReset}>Làm lại</Button>
+          <Button type="primary" onClick={handleSearch}>
+            Tìm kiếm
+          </Button>
+        </div>
       </Form>
     </div>
   )

@@ -67,19 +67,6 @@ export function ReportFilters({ onSearch, onReset }: ReportFiltersProps) {
               <Input placeholder="nhập dữ liệu" allowClear />
             </Form.Item>
           </Col>
-          <Col xs={24} md={6} className="flex items-center justify-end gap-2">
-            <Button onClick={handleReset}>Làm lại</Button>
-            <Button type="primary" onClick={handleSearch}>
-              Tìm kiếm
-            </Button>
-            <Button
-              type="link"
-              className="px-1"
-              onClick={() => setExpanded((prev) => !prev)}
-            >
-              {expanded ? 'Thu gọn' : 'Mở rộng'} {expanded ? <UpOutlined /> : <DownOutlined />}
-            </Button>
-          </Col>
         </Row>
         {expanded && (
           <Row gutter={[16, 16]} align="middle" className="mt-4">
@@ -100,6 +87,15 @@ export function ReportFilters({ onSearch, onReset }: ReportFiltersProps) {
             </Col>
           </Row>
         )}
+        <div className="mt-4 flex items-center justify-end gap-2">
+          <Button onClick={handleReset}>Làm lại</Button>
+          <Button type="primary" onClick={handleSearch}>
+            Tìm kiếm
+          </Button>
+          <Button type="link" className="px-1" onClick={() => setExpanded((prev) => !prev)}>
+            {expanded ? 'Thu gọn' : 'Mở rộng'} {expanded ? <UpOutlined /> : <DownOutlined />}
+          </Button>
+        </div>
       </Form>
     </div>
   )

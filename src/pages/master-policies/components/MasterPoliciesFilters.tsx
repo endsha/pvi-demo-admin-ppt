@@ -91,13 +91,13 @@ export function MasterPoliciesFilters({ onSearch, onReset }: MasterPoliciesFilte
               <Select options={packageTypeOptions} allowClear placeholder="Vui lòng chọn" />
             </Form.Item>
           </Col>
-          <Col span={24} className="flex items-center justify-end gap-2">
-            <Button onClick={handleReset}>Làm lại</Button>
-            <Button type="primary" onClick={handleSearch}>
-              Tìm kiếm
-            </Button>
-          </Col>
         </Row>
+        <div className="mt-4 flex justify-end gap-2">
+          <Button onClick={handleReset}>Làm lại</Button>
+          <Button type="primary" onClick={handleSearch}>
+            Tìm kiếm
+          </Button>
+        </div>
       </Form>
     </div>
   )

@@ -105,13 +105,13 @@ export function DriverSavingsFilters({ onSearch, onReset }: DriverSavingsFilters
               <Select options={statusOptions} allowClear placeholder="Chọn trạng thái" />
             </Form.Item>
           </Col>
-          <Col xs={24} md={6} className="flex items-end justify-end gap-2">
-            <Button onClick={handleReset}>Làm lại</Button>
-            <Button type="primary" onClick={handleSearch}>
-              Tìm kiếm
-            </Button>
-          </Col>
         </Row>
+        <div className="mt-4 flex justify-end gap-2">
+          <Button onClick={handleReset}>Làm lại</Button>
+          <Button type="primary" onClick={handleSearch}>
+            Tìm kiếm
+          </Button>
+        </div>
       </Form>
     </div>
   )
