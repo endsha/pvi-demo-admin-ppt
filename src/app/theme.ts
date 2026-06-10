@@ -1,5 +1,9 @@
 import type { ThemeConfig } from 'antd'
 
+// Shared layout dimension: used both as the antd Layout header height token
+// and as the sticky offset for the header/sidebar in AdminLayout.
+export const HEADER_HEIGHT = 56
+
 export const themeTokens = {
   colorPrimary: '#4f46e5',
   colorSuccess: '#52c41a',
@@ -13,7 +17,7 @@ export const antdTheme: ThemeConfig = {
   components: {
     Layout: {
       headerBg: '#ffffff',
-      headerHeight: 56,
+      headerHeight: HEADER_HEIGHT,
       siderBg: '#ffffff',
     },
   },

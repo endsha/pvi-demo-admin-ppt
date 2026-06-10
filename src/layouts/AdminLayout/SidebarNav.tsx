@@ -92,7 +92,7 @@ export function SidebarNav() {
       selectedKeys={[pathname]}
       defaultOpenKeys={['don-bao-hiem', 'hop-dong', 'yeu-cau-boi-thuong', 'ho-so-boi-thuong', 'bao-cao-power-bi']}
       onClick={onClick}
-      className="h-full border-r-0"
+      className="border-r-0 pb-12"
     />
   )
 }
