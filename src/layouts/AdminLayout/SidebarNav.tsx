@@ -2,13 +2,11 @@ import { Menu } from 'antd'
 import type { MenuProps } from 'antd'
 import {
   AppstoreOutlined,
-  UnorderedListOutlined,
   FileProtectOutlined,
   FileTextOutlined,
   SolutionOutlined,
   FolderOpenOutlined,
   FileDoneOutlined,
-  SettingOutlined,
   SearchOutlined,
   BarChartOutlined,
   UserOutlined,
