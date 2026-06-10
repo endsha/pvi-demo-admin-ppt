@@ -1,13 +1,5 @@
 import type { MasterPolicyDetail } from '../mock-data'
-
-function InfoField({ label, value }: { label: string; value: string | null }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <span className="text-sm text-gray-500">{label}</span>
-      <span className="text-sm text-gray-800">{value ?? '-'}</span>
-    </div>
-  )
-}
+import { InfoField } from './InfoField'
 
 interface GeneralInfoCardProps {
   detail: MasterPolicyDetail

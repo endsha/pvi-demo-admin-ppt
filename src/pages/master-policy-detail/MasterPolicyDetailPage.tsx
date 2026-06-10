@@ -2,6 +2,7 @@ import { Breadcrumb } from 'antd'
 import { useParams } from 'react-router-dom'
 import { getMasterPolicyDetail } from './mock-data'
 import { GeneralInfoCard } from './components/GeneralInfoCard'
+import { ContractTermsCard } from './components/ContractTermsCard'
 import { BenefitTable } from '../../components/insurance/BenefitTable'
 import { AccumulationTable } from '../../components/insurance/AccumulationTable'
 
@@ -24,6 +25,7 @@ export function MasterPolicyDetailPage() {
 
       <div className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
         <GeneralInfoCard detail={detail} />
+        <ContractTermsCard terms={detail.terms} />
         <section>
           <h2 className="mb-4 text-base font-semibold text-gray-800">Bảng Quyền lợi bảo hiểm</h2>
           <BenefitTable rows={detail.benefits} />
