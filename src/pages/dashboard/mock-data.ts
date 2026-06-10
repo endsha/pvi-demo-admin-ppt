@@ -25,8 +25,8 @@ export const kpiCards: KpiCardData[] = [
   { label: 'Doanh thu tháng này', value: '0' },
   {
     label: 'Doanh thu năm nay',
-    value: '645,000 VND',
-    sub: '95% ↓ so với năm trước',
+    value: '64,500,000,000 VND',
+    sub: '50% ↓ so với năm trước',
     accent: true,
   },
   { label: 'Doanh thu trung bình theo ngày', value: '0' },
