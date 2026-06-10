@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Topbar } from './Topbar'
 import { SidebarNav } from './SidebarNav'
+import { HEADER_HEIGHT } from '../../app/theme'
 
 const { Header, Sider, Content } = Layout
 
@@ -15,6 +16,10 @@ export function AdminLayout() {
 
   return (
     <Layout className="min-h-screen">
+      {/* Full-width header layered above the sidebar */}
+      <Header className="fixed inset-x-0 top-0 z-30 w-full px-0 shadow-sm">
+        <Topbar />
+      </Header>
       <Sider
         width={SIDER_WIDTH}
         collapsedWidth={SIDER_COLLAPSED_WIDTH}
@@ -23,7 +28,7 @@ export function AdminLayout() {
         collapsed={collapsed}
         onCollapse={setCollapsed}
         breakpoint="lg"
-        className="shadow-sm"
+        className="z-20 shadow-sm"
         style={{
           position: 'fixed',
           insetInlineStart: 0,
@@ -33,14 +38,17 @@ export function AdminLayout() {
           overflow: 'auto',
         }}
       >
+        {/* Spacer so the menu starts below the overlaid header */}
+        <div style={{ height: HEADER_HEIGHT }} />
         <SidebarNav />
       </Sider>
       <Layout
-        style={{ marginInlineStart: siderWidth, transition: 'margin-inline-start 0.2s' }}
+        style={{
+          marginInlineStart: siderWidth,
+          marginTop: HEADER_HEIGHT,
+          transition: 'margin-inline-start 0.2s',
+        }}
       >
-        <Header className="sticky top-0 z-20 px-0 shadow-sm">
-          <Topbar />
-        </Header>
         <Content className="p-6">
           <Outlet />
           <footer className="mt-8 text-center text-xs text-gray-400">
