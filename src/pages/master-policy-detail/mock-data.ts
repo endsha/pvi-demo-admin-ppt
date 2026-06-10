@@ -3,7 +3,7 @@ import { formatMoney } from '../../components/insurance/format'
 
 export interface MasterPolicyDetail {
   id: string
-  driverCode: string // Mã Tài xế GSM
+  driverCode: string // Mã Tài xế Grab
   fullName: string // Họ và tên
   dob: string | null // Ngày sinh
   idNumber: string | null // Số CMND/CCCD/Hộ chiếu
@@ -71,14 +71,14 @@ export const masterPolicyDetail: MasterPolicyDetail = {
   dob: null,
   idNumber: null,
   gender: 'Male',
-  contractNumber: '26/PC-GSM/067426',
+  contractNumber: '26/PC-GRAB/067426',
   accumulationPeriod: null,
   benefits: masterBenefits,
   trips: [
     {
       id: 't1',
-      gsmTripId: '01KTM096HKQ98CG7ZTZWC8NJM0',
-      transferContractNo: '26/PC-GSM/067426/000012',
+      grabTripId: '01KTM096HKQ98CG7ZTZWC8NJM0',
+      transferContractNo: '26/PC-GRAB/067426/000012',
       completedAt: '2026-06-08T23:48:14',
       effectiveStart: '2026-06-08T23:48:14',
       effectiveEnd: '2026-12-05T23:48:13',
@@ -87,8 +87,8 @@ export const masterPolicyDetail: MasterPolicyDetail = {
     },
     {
       id: 't2',
-      gsmTripId: '01KTM23ECWFBJT4P34KBTNJN4P',
-      transferContractNo: '26/PC-GSM/067426/000024',
+      grabTripId: '01KTM23ECWFBJT4P34KBTNJN4P',
+      transferContractNo: '26/PC-GRAB/067426/000024',
       completedAt: '2026-06-08T23:58:54',
       effectiveStart: '2026-06-08T23:58:54',
       effectiveEnd: '2026-12-05T23:58:53',

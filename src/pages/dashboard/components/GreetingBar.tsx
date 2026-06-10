@@ -8,7 +8,7 @@ export function GreetingBar() {
       <div className="flex items-center gap-2">
         <span className="text-sm text-gray-500">Đối tác</span>
         <Select
-          defaultValue="PVID"
+          defaultValue="Grab"
           options={[...partnerOptions]}
           className="w-40"
         />

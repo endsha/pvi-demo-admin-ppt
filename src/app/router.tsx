@@ -5,7 +5,7 @@ import { PlaceholderPage } from '../pages/placeholder/PlaceholderPage'
 import { PoliciesListPage } from '../pages/policies/PoliciesListPage'
 import { ReportsListPage } from '../pages/reports/ReportsListPage'
 import { InvoiceRequestsListPage } from '../pages/invoice-requests/InvoiceRequestsListPage'
-import { GsmSearchPage } from '../pages/gsm-search/GsmSearchPage'
+import { GrabSearchPage } from '../pages/grab-search/GrabSearchPage'
 import { AccountSettingsPage } from '../pages/account-settings/AccountSettingsPage'
 import { DriverSavingsListPage } from '../pages/driver-savings/DriverSavingsListPage'
 import { MasterPoliciesListPage } from '../pages/master-policies/MasterPoliciesListPage'
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       { path: 'don-bao-hiem/bao-hiem-hang-hoa', element: <PlaceholderPage title="Bảo hiểm hàng hoá" /> },
       { path: 'don-bao-hiem/bao-hiem-tich-luy-tai-xe', element: <DriverSavingsListPage /> },
       { path: 'don-bao-hiem/bao-hiem-foodcare', element: <PlaceholderPage title="Bảo hiểm FoodCare" /> },
-      { path: 'tra-cuu-gsm', element: <GsmSearchPage /> },
+      { path: 'tra-cuu-grab', element: <GrabSearchPage /> },
       { path: 'yeu-cau-hoa-don', element: <InvoiceRequestsListPage /> },
       { path: 'bao-cao-power-bi/quan-ly-bao-cao', element: <ReportsListPage /> },
       { path: 'bao-cao-power-bi/bao-cao-cong-khai', element: <PlaceholderPage title="Báo cáo công khai" /> },

@@ -31,7 +31,7 @@ interface AccumulationTableProps {
 export function AccumulationTable({ trips, title = 'Bảng Danh sách đơn tích luỹ' }: AccumulationTableProps) {
   const columns: ColumnsType<AccumulationTrip> = [
     { title: 'STT', key: 'stt', width: 60, render: (_v, _row, index) => index + 1 },
-    { title: <HeaderWithSort label="ID chuyến xe GSM" />, dataIndex: 'gsmTripId', key: 'gsmTripId' },
+    { title: <HeaderWithSort label="ID chuyến xe Grab" />, dataIndex: 'grabTripId', key: 'grabTripId' },
     {
       title: <HeaderWithSort label="Mã hợp đồng bảo hiểm chuyến" />,
       dataIndex: 'transferContractNo',

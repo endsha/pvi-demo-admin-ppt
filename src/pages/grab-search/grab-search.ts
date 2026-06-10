@@ -1,12 +1,12 @@
-import { ALL_INSURANCE, type GsmRecord } from './mock-data'
+import { ALL_INSURANCE, type GrabRecord } from './mock-data'
 
-export interface GsmSearchCriteria {
+export interface GrabSearchCriteria {
   phone: string
   driverCode: string
   insuranceType: string
 }
 
-export const DEFAULT_CRITERIA: GsmSearchCriteria = {
+export const DEFAULT_CRITERIA: GrabSearchCriteria = {
   phone: '',
   driverCode: '',
   insuranceType: ALL_INSURANCE,
@@ -14,9 +14,9 @@ export const DEFAULT_CRITERIA: GsmSearchCriteria = {
 
 // Pure filter. Blank inputs are ignored; all active conditions are AND-ed.
 export function applySearch(
-  records: GsmRecord[],
-  criteria: GsmSearchCriteria,
-): GsmRecord[] {
+  records: GrabRecord[],
+  criteria: GrabSearchCriteria,
+): GrabRecord[] {
   const phone = criteria.phone.trim().toLowerCase()
   const driverCode = criteria.driverCode.trim().toLowerCase()
   const { insuranceType } = criteria

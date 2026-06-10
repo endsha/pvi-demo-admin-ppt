@@ -18,7 +18,7 @@ export interface ChartPoint {
   soDon: number
 }
 
-export const partnerOptions = [{ value: 'PVID', label: 'PVID' }] as const
+export const partnerOptions = [{ value: 'Grab', label: 'Grab' }] as const
 
 export const kpiCards: KpiCardData[] = [
   { label: 'Doanh thu hôm nay', value: '0' },

@@ -1,11 +1,11 @@
 import { Button, Form, Input, Select } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 import { insuranceTypeOptions } from '../mock-data'
-import { DEFAULT_CRITERIA, type GsmSearchCriteria } from '../gsm-search'
+import { DEFAULT_CRITERIA, type GrabSearchCriteria } from '../grab-search'
 
-interface GsmSearchFormProps {
+interface GrabSearchFormProps {
   loading: boolean
-  onSearch: (criteria: GsmSearchCriteria) => void
+  onSearch: (criteria: GrabSearchCriteria) => void
 }
 
 interface FormShape {
@@ -20,7 +20,7 @@ const initialValues: FormShape = {
   insuranceType: DEFAULT_CRITERIA.insuranceType,
 }
 
-export function GsmSearchForm({ loading, onSearch }: GsmSearchFormProps) {
+export function GrabSearchForm({ loading, onSearch }: GrabSearchFormProps) {
   const [form] = Form.useForm<FormShape>()
 
   const handleFinish = (values: FormShape) => {
@@ -42,7 +42,7 @@ export function GsmSearchForm({ loading, onSearch }: GsmSearchFormProps) {
         className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm"
       >
         <h2 className="mb-5 text-base font-semibold text-gray-800">
-          Tra cứu thông tin GSM PPT
+          Tra cứu thông tin Grab PPT
         </h2>
         <Form.Item label="Số điện thoại" name="phone" className="mb-4">
           <Input
@@ -51,7 +51,7 @@ export function GsmSearchForm({ loading, onSearch }: GsmSearchFormProps) {
             allowClear
           />
         </Form.Item>
-        <Form.Item label="Mã tài xế GSM" name="driverCode" className="mb-4">
+        <Form.Item label="Mã tài xế Grab" name="driverCode" className="mb-4">
           <Input placeholder="Nhập mã tài xế (nếu có)" allowClear />
         </Form.Item>
         <Form.Item

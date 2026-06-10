@@ -43,7 +43,7 @@ export function InsuredPersonSection({ showCustomerSearch = true }: InsuredPerso
                 optionFilterProp="label"
                 options={customerOptions}
                 onChange={handleSelectCustomer}
-                placeholder="Nhập số hợp đồng nguyên tắc, số điện thoại hoặc mã tài xế GSM để tìm kiếm"
+                placeholder="Nhập số hợp đồng nguyên tắc, số điện thoại hoặc mã tài xế Grab để tìm kiếm"
               />
             </Form.Item>
           </Col>
@@ -51,11 +51,11 @@ export function InsuredPersonSection({ showCustomerSearch = true }: InsuredPerso
 
         <Col xs={24} md={8}>
           <Form.Item
-            label="Mã Tài xế GSM"
+            label="Mã Tài xế Grab"
             name="driverCode"
-            rules={[{ required: true, message: 'Vui lòng nhập Mã Tài xế GSM' }]}
+            rules={[{ required: true, message: 'Vui lòng nhập Mã Tài xế Grab' }]}
           >
-            <Input placeholder="Vui lòng nhập Mã Tài xế GSM" />
+            <Input placeholder="Vui lòng nhập Mã Tài xế Grab" />
           </Form.Item>
         </Col>
         <Col xs={24} md={8}>

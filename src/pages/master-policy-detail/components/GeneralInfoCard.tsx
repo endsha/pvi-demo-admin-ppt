@@ -18,7 +18,7 @@ export function GeneralInfoCard({ detail }: GeneralInfoCardProps) {
     <section>
       <h2 className="mb-4 text-base font-semibold text-gray-800">Thông tin chung</h2>
       <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-3">
-        <InfoField label="Mã Tài xế GSM" value={detail.driverCode} />
+        <InfoField label="Mã Tài xế Grab" value={detail.driverCode} />
         <InfoField label="Họ và tên" value={detail.fullName} />
         <InfoField label="Ngày sinh" value={detail.dob} />
         <InfoField label="Số CMND/CCCD/Hộ chiếu" value={detail.idNumber} />

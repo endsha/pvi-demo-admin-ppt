@@ -47,7 +47,7 @@ export interface MockCustomer {
 export const receivingSourceOptions = [
   { value: 'call_center', label: 'Tổng đài' },
   { value: 'email', label: 'Email' },
-  { value: 'gsm_app', label: 'Ứng dụng GSM' },
+  { value: 'grab_app', label: 'Ứng dụng Grab' },
   { value: 'counter', label: 'Trực tiếp tại quầy' },
 ]
 
@@ -66,9 +66,9 @@ export const claimCaseOptions: { value: ClaimCaseKey; label: string }[] = [
 
 export const mockCustomers: MockCustomer[] = [
   {
-    value: 'GSM-000123',
-    label: 'GSM-000123 — Nguyễn Văn An — 0901234567',
-    driverCode: 'GSM-000123',
+    value: 'GRAB-000123',
+    label: 'GRAB-000123 — Nguyễn Văn An — 0901234567',
+    driverCode: 'GRAB-000123',
     fullName: 'Nguyễn Văn An',
     gender: 'male',
     idNumber: '079090001234',
@@ -78,9 +78,9 @@ export const mockCustomers: MockCustomer[] = [
     zalo: '0901234567',
   },
   {
-    value: 'GSM-000456',
-    label: 'GSM-000456 — Trần Thị Bình — 0912345678',
-    driverCode: 'GSM-000456',
+    value: 'GRAB-000456',
+    label: 'GRAB-000456 — Trần Thị Bình — 0912345678',
+    driverCode: 'GRAB-000456',
     fullName: 'Trần Thị Bình',
     gender: 'female',
     idNumber: '079185004567',
@@ -90,9 +90,9 @@ export const mockCustomers: MockCustomer[] = [
     zalo: '0912345678',
   },
   {
-    value: 'GSM-000789',
-    label: 'GSM-000789 — Lê Hoàng Cường — 0987654321',
-    driverCode: 'GSM-000789',
+    value: 'GRAB-000789',
+    label: 'GRAB-000789 — Lê Hoàng Cường — 0987654321',
+    driverCode: 'GRAB-000789',
     fullName: 'Lê Hoàng Cường',
     gender: 'male',
     idNumber: '079092007890',

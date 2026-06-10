@@ -16,12 +16,12 @@ export interface ClaimFileDetail {
   trips: AccumulationTrip[]
 }
 
-// HĐNT select options — '24/PM-GSM/013203' is from the design; others are
+// HĐNT select options — '24/PM-GRAB/013203' is from the design; others are
 // plausible fillers so the select is functional (UI-only, no API).
 export const masterPolicyOptions = [
-  { value: '24/PM-GSM/013203', label: '24/PM-GSM/013203' },
-  { value: '25/PM-GSM/3854282', label: '25/PM-GSM/3854282' },
-  { value: '24/PC-GSM/028080', label: '24/PC-GSM/028080' },
+  { value: '24/PM-GRAB/013203', label: '24/PM-GRAB/013203' },
+  { value: '25/PM-GRAB/3854282', label: '25/PM-GRAB/3854282' },
+  { value: '24/PC-GRAB/028080', label: '24/PC-GRAB/028080' },
 ]
 
 // Status options — 'Thanh toán bồi thường' is from the design; others are
@@ -66,8 +66,8 @@ const payments: PaymentRow[] = [
 const trips: AccumulationTrip[] = [
   {
     id: 't1',
-    gsmTripId: '01KTM096HKQ98CG7ZTZWC8NJM0',
-    transferContractNo: '24/PM-GSM/013203/000012',
+    grabTripId: '01KTM096HKQ98CG7ZTZWC8NJM0',
+    transferContractNo: '24/PM-GRAB/013203/000012',
     completedAt: '2025-11-14T08:12:03',
     effectiveStart: '2025-11-14T08:12:03',
     effectiveEnd: '2026-05-13T08:12:02',
@@ -76,8 +76,8 @@ const trips: AccumulationTrip[] = [
   },
   {
     id: 't2',
-    gsmTripId: '01KTM23ECWFBJT4P34KBTNJN4P',
-    transferContractNo: '24/PM-GSM/013203/000024',
+    grabTripId: '01KTM23ECWFBJT4P34KBTNJN4P',
+    transferContractNo: '24/PM-GRAB/013203/000024',
     completedAt: '2025-11-14T09:30:41',
     effectiveStart: '2025-11-14T09:30:41',
     effectiveEnd: '2026-05-13T09:30:40',
@@ -89,10 +89,10 @@ const trips: AccumulationTrip[] = [
 // Mirrors claim-files list row id '1' (src/pages/claim-files/mock-data.ts) + image 01.
 const defaultDetail: ClaimFileDetail = {
   id: '1',
-  masterPolicyNumber: '24/PM-GSM/013203',
+  masterPolicyNumber: '24/PM-GRAB/013203',
   status: 'thanh-toan',
   insured: [
-    { label: 'Mã Tài xế GSM', value: '3000000761' },
+    { label: 'Mã Tài xế Grab', value: '3000000761' },
     { label: 'Họ và tên', value: 'Phạm Minh Hòa' },
     { label: 'Giới tính', value: 'Nam' },
     { label: 'Số CMND/CCCD/ Hộ chiếu', value: null },

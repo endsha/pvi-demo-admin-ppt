@@ -65,7 +65,7 @@ const items: MenuProps['items'] = [
   },
   { key: '/yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn' },
   { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
-  { key: '/tra-cuu-gsm', icon: <SearchOutlined />, label: 'Tra cứu GSM PPT' },
+  { key: '/tra-cuu-grab', icon: <SearchOutlined />, label: 'Tra cứu Grab PPT' },
   {
     key: 'bao-cao-power-bi',
     icon: <BarChartOutlined />,

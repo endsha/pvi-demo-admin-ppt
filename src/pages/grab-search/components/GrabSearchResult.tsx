@@ -1,15 +1,15 @@
 import { Empty, Table, Tag } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import type { GsmRecord } from '../mock-data'
+import type { GrabRecord } from '../mock-data'
 import { STATUS_CONFIG, formatPremium, formatDateTime } from '../../policies/mock-data'
 
 const PAGE_SIZE = 10
 
-interface GsmSearchResultProps {
-  records: GsmRecord[]
+interface GrabSearchResultProps {
+  records: GrabRecord[]
 }
 
-const columns: ColumnsType<GsmRecord> = [
+const columns: ColumnsType<GrabRecord> = [
   { title: 'Mã chuyến', dataIndex: 'tripId', key: 'tripId' },
   { title: 'Biển số', dataIndex: 'plate', key: 'plate' },
   { title: 'Tên người đi', dataIndex: 'riderName', key: 'riderName' },
@@ -32,21 +32,21 @@ const columns: ColumnsType<GsmRecord> = [
     title: 'Trạng thái',
     dataIndex: 'status',
     key: 'status',
-    render: (status: GsmRecord['status']) => {
+    render: (status: GrabRecord['status']) => {
       const cfg = STATUS_CONFIG[status]
       return <Tag color={cfg.color}>{cfg.tagLabel}</Tag>
     },
   },
 ]
 
-export function GsmSearchResult({ records }: GsmSearchResultProps) {
+export function GrabSearchResult({ records }: GrabSearchResultProps) {
   return (
     <section className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
       <h2 className="mb-4 text-base font-semibold text-gray-800">Kết quả tra cứu</h2>
       {records.length === 0 ? (
         <Empty description="Không tìm thấy thông tin phù hợp" />
       ) : (
-        <Table<GsmRecord>
+        <Table<GrabRecord>
           rowKey="id"
           columns={columns}
           dataSource={records}

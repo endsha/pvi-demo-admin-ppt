@@ -10,7 +10,7 @@ export interface BenefitRow {
 
 export interface AccumulationTrip {
   id: string
-  gsmTripId: string // ID chuyến xe GSM
+  grabTripId: string // ID chuyến xe Grab
   transferContractNo: string // Mã hợp đồng bảo hiểm chuyến
   completedAt: string // ISO — Thời gian hoàn thành chuyến
   effectiveStart: string // ISO — Thời gian bắt đầu bảo hiểm
