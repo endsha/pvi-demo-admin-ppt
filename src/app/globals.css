@@ -1,3 +1,8 @@
+/* Declare `antd` as the lowest-priority cascade layer so antd's CSS-in-JS
+   (emitted into `@layer antd` via <StyleProvider layer>) loses to Tailwind
+   utilities. Without this, antd resets like `.ant-form { padding: 0 }` would
+   silently override classes such as `p-5`. */
+@layer antd;
 @import 'tailwindcss';
 
 :root {
