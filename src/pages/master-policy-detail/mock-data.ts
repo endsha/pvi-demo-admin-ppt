@@ -21,6 +21,12 @@ function money(n: number): string {
   return `${formatMoney(n)} đ`
 }
 
+function formatDob(iso: string): string {
+  const d = new Date(iso)
+  const pad = (x: number) => String(x).padStart(2, '0')
+  return `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()}`
+}
+
 // Shared benefit name/sub metadata, in display order.
 const BENEFIT_META: Array<{ key: string; name: string; sub?: string }> = [
   { key: 'death', name: 'Tử vong do tai nạn' },
@@ -114,9 +120,9 @@ function buildDetail(row: MasterPolicyRow): MasterPolicyDetail {
     id: row.id,
     driverCode: row.driverCode,
     fullName: row.customerName,
-    dob: null,
-    idNumber: null,
-    gender: '-',
+    dob: formatDob(row.dob),
+    idNumber: row.idNumber,
+    gender: row.gender,
     contractNumber: row.contractNumber,
     accumulationPeriod: null,
     terms,
