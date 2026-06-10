@@ -36,27 +36,29 @@ export function NewClaimRequestPage() {
         <h1 className="text-xl font-semibold text-gray-800">Thêm yêu cầu bồi thường</h1>
       </div>
 
-      <Form
-        form={form}
-        layout="vertical"
-        requiredMark
-        initialValues={initialValues}
-        onFinish={handleFinish}
-        className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-white p-6 shadow-sm"
-      >
-        <GeneralInfoSection />
-        <InsuredPersonSection />
-        <AccidentInfoSection />
-        <ClaimAmountSection />
-        <BeneficiarySection />
+      <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
+        <Form
+          form={form}
+          layout="vertical"
+          requiredMark
+          initialValues={initialValues}
+          onFinish={handleFinish}
+          className="flex flex-col gap-8"
+        >
+          <GeneralInfoSection />
+          <InsuredPersonSection />
+          <AccidentInfoSection />
+          <ClaimAmountSection />
+          <BeneficiarySection />
 
-        <div className="flex items-center gap-3">
-          <Button onClick={handleReset}>Làm lại</Button>
-          <Button type="primary" htmlType="submit">
-            Lưu
-          </Button>
-        </div>
-      </Form>
+          <div className="flex items-center gap-3">
+            <Button onClick={handleReset}>Làm lại</Button>
+            <Button type="primary" htmlType="submit">
+              Lưu
+            </Button>
+          </div>
+        </Form>
+      </div>
     </div>
   )
 }

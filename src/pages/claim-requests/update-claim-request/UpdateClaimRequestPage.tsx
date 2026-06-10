@@ -43,33 +43,35 @@ export function UpdateClaimRequestPage() {
         <h1 className="text-xl font-semibold text-gray-800">Chỉnh sửa yêu cầu bồi thường</h1>
       </div>
 
-      <Form
-        form={form}
-        layout="vertical"
-        requiredMark
-        initialValues={claim}
-        onFinish={handleFinish}
-        className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-white p-6 shadow-sm"
-      >
-        <GeneralInfoSection />
-        <InsuredPersonSection showCustomerSearch={false} />
-        <AccidentInfoSection />
-        <ClaimAmountSection />
-        <BeneficiarySection />
-        <ClaimHistorySection rows={claim.historyRows} />
+      <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
+        <Form
+          form={form}
+          layout="vertical"
+          requiredMark
+          initialValues={claim}
+          onFinish={handleFinish}
+          className="flex flex-col gap-8"
+        >
+          <GeneralInfoSection />
+          <InsuredPersonSection showCustomerSearch={false} />
+          <AccidentInfoSection />
+          <ClaimAmountSection />
+          <BeneficiarySection />
+          <ClaimHistorySection rows={claim.historyRows} />
 
-        <div className="flex items-center gap-3">
-          <Button color="green" variant="solid" onClick={handleCreateClaimFile}>
-            Tạo Hồ sơ bồi thường
-          </Button>
-          <Button onClick={handleReset}>Làm lại</Button>
-          <Tooltip title="Cập nhật Yêu cầu bồi thường">
-            <Button type="primary" htmlType="submit">
-              Lưu
+          <div className="flex items-center gap-3">
+            <Button color="green" variant="solid" onClick={handleCreateClaimFile}>
+              Tạo Hồ sơ bồi thường
             </Button>
-          </Tooltip>
-        </div>
-      </Form>
+            <Button onClick={handleReset}>Làm lại</Button>
+            <Tooltip title="Cập nhật Yêu cầu bồi thường">
+              <Button type="primary" htmlType="submit">
+                Lưu
+              </Button>
+            </Tooltip>
+          </div>
+        </Form>
+      </div>
     </div>
   )
 }

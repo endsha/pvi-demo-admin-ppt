@@ -49,55 +49,52 @@ export function ClaimFilesFilters({ onSearch, onReset }: ClaimFilesFiltersProps)
   }
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      initialValues={initialValues}
-      className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm"
-    >
-      <Row gutter={[16, 16]} align="bottom">
-        <Col xs={24} md={6}>
-          <Form.Item
-            label={
-              <span className="inline-flex items-center gap-1">
-                Tìm kiếm
-                <Tooltip title="Tìm theo số yêu cầu, mã hồ sơ, mã tài xế, tên, số HĐNT">
-                  <InfoCircleOutlined className="text-gray-400" />
-                </Tooltip>
-              </span>
-            }
-            name="keyword"
-            className="mb-0"
-          >
-            <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Sắp xếp theo" name="sort" className="mb-0">
-            <Select options={sortOptions} />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Tình trạng Hồ sơ bồi thường" name="status" className="mb-0">
-            <Select options={statusOptions} allowClear placeholder="Lọc theo trạng thái" />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Ngày thực hiện chi trả bồi thường" name="paidRange" className="mb-0">
-            <RangePicker
-              className="w-full"
-              format="YYYY-MM-DD"
-              placeholder={['Từ ngày', 'Đến ngày']}
-            />
-          </Form.Item>
-        </Col>
-        <Col span={24} className="flex items-center justify-end gap-2">
-          <Button onClick={handleReset}>Làm lại</Button>
-          <Button type="primary" onClick={handleSearch}>
-            Tìm kiếm
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+    <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
+      <Form form={form} layout="vertical" initialValues={initialValues}>
+        <Row gutter={[16, 16]} align="bottom">
+          <Col xs={24} md={6}>
+            <Form.Item
+              label={
+                <span className="inline-flex items-center gap-1">
+                  Tìm kiếm
+                  <Tooltip title="Tìm theo số yêu cầu, mã hồ sơ, mã tài xế, tên, số HĐNT">
+                    <InfoCircleOutlined className="text-gray-400" />
+                  </Tooltip>
+                </span>
+              }
+              name="keyword"
+              className="mb-0"
+            >
+              <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Sắp xếp theo" name="sort" className="mb-0">
+              <Select options={sortOptions} />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Tình trạng Hồ sơ bồi thường" name="status" className="mb-0">
+              <Select options={statusOptions} allowClear placeholder="Lọc theo trạng thái" />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Ngày thực hiện chi trả bồi thường" name="paidRange" className="mb-0">
+              <RangePicker
+                className="w-full"
+                format="YYYY-MM-DD"
+                placeholder={['Từ ngày', 'Đến ngày']}
+              />
+            </Form.Item>
+          </Col>
+          <Col span={24} className="flex items-center justify-end gap-2">
+            <Button onClick={handleReset}>Làm lại</Button>
+            <Button type="primary" onClick={handleSearch}>
+              Tìm kiếm
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+    </div>
   )
 }

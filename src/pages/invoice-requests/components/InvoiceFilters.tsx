@@ -34,30 +34,27 @@ export function InvoiceFilters({ onSearch, onReset }: InvoiceFiltersProps) {
   }
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      initialValues={initialValues}
-      className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm"
-    >
-      <Row gutter={[16, 16]} align="bottom">
-        <Col xs={24} md={8}>
-          <Form.Item label="Tìm kiếm" name="keyword" className="mb-0">
-            <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={8}>
-          <Form.Item label="Sắp xếp theo" name="sort" className="mb-0">
-            <Select options={sortOptions} />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={8} className="flex items-end justify-end gap-2">
-          <Button onClick={handleReset}>Làm lại</Button>
-          <Button type="primary" onClick={handleSearch}>
-            Tìm kiếm
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+    <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
+      <Form form={form} layout="vertical" initialValues={initialValues}>
+        <Row gutter={[16, 16]} align="bottom">
+          <Col xs={24} md={8}>
+            <Form.Item label="Tìm kiếm" name="keyword" className="mb-0">
+              <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={8}>
+            <Form.Item label="Sắp xếp theo" name="sort" className="mb-0">
+              <Select options={sortOptions} />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={8} className="flex items-end justify-end gap-2">
+            <Button onClick={handleReset}>Làm lại</Button>
+            <Button type="primary" onClick={handleSearch}>
+              Tìm kiếm
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+    </div>
   )
 }
