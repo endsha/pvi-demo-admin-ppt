@@ -17,17 +17,17 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 const items: MenuProps['items'] = [
   { key: '/', icon: <AppstoreOutlined />, label: 'Bảng điều khiển' },
-  { key: 'muc-luc', icon: <UnorderedListOutlined />, label: 'Mục lục', children: [] },
+  // { key: 'muc-luc', icon: <UnorderedListOutlined />, label: 'Mục lục', children: [] },
   {
     key: 'don-bao-hiem',
     icon: <FileProtectOutlined />,
     label: 'Đơn bảo hiểm',
     children: [
-      { key: '/don-bao-hiem/tat-ca', label: 'Tất cả Đơn bảo hiểm' },
-      { key: '/don-bao-hiem/tai-nan-hanh-khach-theo-chuyen', label: 'Tai nạn hành khách theo chuyến' },
-      { key: '/don-bao-hiem/bao-hiem-hang-hoa', label: 'Bảo hiểm hàng hoá' },
+      // { key: '/don-bao-hiem/tat-ca', label: 'Tất cả Đơn bảo hiểm' },
+      // { key: '/don-bao-hiem/tai-nan-hanh-khach-theo-chuyen', label: 'Tai nạn hành khách theo chuyến' },
+      // { key: '/don-bao-hiem/bao-hiem-hang-hoa', label: 'Bảo hiểm hàng hoá' },
       { key: '/don-bao-hiem/bao-hiem-tich-luy-tai-xe', label: 'Bảo hiểm tích lũy tài xế' },
-      { key: '/don-bao-hiem/bao-hiem-foodcare', label: 'Bảo hiểm FoodCare' },
+      // { key: '/don-bao-hiem/bao-hiem-foodcare', label: 'Bảo hiểm FoodCare' },
     ],
   },
   {
@@ -57,19 +57,19 @@ const items: MenuProps['items'] = [
     icon: <FolderOpenOutlined />,
     label: 'Hồ sơ bồi thường',
     children: [
-      { key: '/ho-so-boi-thuong/tat-ca', label: 'Tất cả hồ sơ bồi thường' },
-      { key: '/ho-so-boi-thuong/tai-nan-hanh-khach-theo-chuyen', label: 'Tai nạn hành khách theo chuyến' },
-      { key: '/ho-so-boi-thuong/bao-hiem-hang-hoa', label: 'Bảo hiểm hàng hoá' },
+      // { key: '/ho-so-boi-thuong/tat-ca', label: 'Tất cả hồ sơ bồi thường' },
+      // { key: '/ho-so-boi-thuong/tai-nan-hanh-khach-theo-chuyen', label: 'Tai nạn hành khách theo chuyến' },
+      // { key: '/ho-so-boi-thuong/bao-hiem-hang-hoa', label: 'Bảo hiểm hàng hoá' },
       { key: '/ho-so-boi-thuong/bao-hiem-tich-luy-tai-xe', label: 'Bảo hiểm tích lũy tài xế' },
     ],
   },
   { key: '/yeu-cau-hoa-don', icon: <FileDoneOutlined />, label: 'Yêu cầu hoá đơn' },
-  { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
+  // { key: 'quan-tri', icon: <SettingOutlined />, label: 'Quản trị', children: [] },
   { key: '/tra-cuu-grab', icon: <SearchOutlined />, label: 'Tra cứu Grab PPT' },
   {
     key: 'bao-cao-power-bi',
     icon: <BarChartOutlined />,
-    label: 'Báo cáo Power BI',
+    label: 'Báo cáo',
     children: [
       { key: '/bao-cao-power-bi/quan-ly-bao-cao', label: 'Quản lý báo cáo' },
       { key: '/bao-cao-power-bi/bao-cao-cong-khai', label: 'Báo cáo công khai' },
