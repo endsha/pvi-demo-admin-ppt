@@ -55,7 +55,7 @@ export function ReportFilters({ onSearch, onReset }: ReportFiltersProps) {
       initialValues={initialValues}
       className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm"
     >
-      <Row gutter={16} align="middle">
+      <Row gutter={[16, 16]} align="middle">
         <Col xs={24} md={6}>
           <Form.Item label="Tìm kiếm" name="keyword" className="mb-0">
             <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
@@ -71,7 +71,7 @@ export function ReportFilters({ onSearch, onReset }: ReportFiltersProps) {
             <Input placeholder="nhập dữ liệu" allowClear />
           </Form.Item>
         </Col>
-        <Col xs={24} md={6} className="flex items-center justify-end gap-2 pt-3 md:pt-0">
+        <Col xs={24} md={6} className="flex items-center justify-end gap-2">
           <Button onClick={handleReset}>Làm lại</Button>
           <Button type="primary" onClick={handleSearch}>
             Tìm kiếm
@@ -86,7 +86,7 @@ export function ReportFilters({ onSearch, onReset }: ReportFiltersProps) {
         </Col>
       </Row>
       {expanded && (
-        <Row gutter={16} align="middle" className="mt-4">
+        <Row gutter={[16, 16]} align="middle" className="mt-4">
           <Col xs={24} md={6}>
             <Form.Item label="Loại báo cáo" name="reportType" className="mb-0">
               <Select options={reportTypeOptions} allowClear placeholder="Chọn loại báo cáo" />

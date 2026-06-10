@@ -58,7 +58,7 @@ export function ClaimRequestsFilters({ onSearch, onReset }: ClaimRequestsFilters
       initialValues={initialValues}
       className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm"
     >
-      <Row gutter={16}>
+      <Row gutter={[16, 16]} align="bottom">
         <Col xs={24} md={6}>
           <Form.Item
             label={
@@ -70,18 +70,18 @@ export function ClaimRequestsFilters({ onSearch, onReset }: ClaimRequestsFilters
               </span>
             }
             name="keyword"
-            className="mb-3"
+            className="mb-0"
           >
             <Input placeholder="Nhập từ khoá tìm kiếm" allowClear />
           </Form.Item>
         </Col>
         <Col xs={24} md={6}>
-          <Form.Item label="Sắp xếp theo" name="sort" className="mb-3">
+          <Form.Item label="Sắp xếp theo" name="sort" className="mb-0">
             <Select options={sortOptions} />
           </Form.Item>
         </Col>
         <Col xs={24} md={6}>
-          <Form.Item label="Ngày yêu cầu bồi thường" name="requestedRange" className="mb-3">
+          <Form.Item label="Ngày yêu cầu bồi thường" name="requestedRange" className="mb-0">
             <RangePicker
               className="w-full"
               format="YYYY-MM-DD"
@@ -90,18 +90,16 @@ export function ClaimRequestsFilters({ onSearch, onReset }: ClaimRequestsFilters
           </Form.Item>
         </Col>
         <Col xs={24} md={6}>
-          <Form.Item label="Nguồn tiếp nhận" name="source" className="mb-3">
+          <Form.Item label="Nguồn tiếp nhận" name="source" className="mb-0">
             <Select options={sourceOptions} allowClear placeholder="Vui lòng chọn" />
           </Form.Item>
         </Col>
-      </Row>
-      <Row gutter={16} align="bottom">
         <Col xs={24} md={6}>
           <Form.Item label="Tình trạng yêu cầu bồi thường" name="status" className="mb-0">
             <Select options={statusOptions} allowClear placeholder="Vui lòng chọn" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={6} className="ml-auto flex items-end justify-end gap-2 pt-3 md:pt-0">
+        <Col xs={24} md={18} className="flex items-end justify-end gap-2">
           <Button onClick={handleReset}>Làm lại</Button>
           <Button type="primary" onClick={handleSearch}>
             Tìm kiếm
