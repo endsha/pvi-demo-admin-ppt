@@ -1,14 +1,16 @@
-import type { ReactNode } from 'react'
-import { Button, Table } from 'antd'
+import { useState, type ReactNode } from 'react'
+import { Button, message, Table } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import {
   ColumnHeightOutlined,
+  DownloadOutlined,
   ReloadOutlined,
   SettingOutlined,
   ZoomInOutlined,
 } from '@ant-design/icons'
 import type { ColumnsType } from 'antd/es/table'
 import { formatDateTimeSeconds, formatMoney, type MasterPolicyRow } from '../mock-data'
+import { downloadContractPdf } from '../contract-pdf'
 
 const PAGE_SIZE = 10
 
@@ -29,8 +31,20 @@ function Field({ label, value }: { label: string; value: ReactNode }) {
 
 export function MasterPoliciesTable({ rows, page, onPageChange }: MasterPoliciesTableProps) {
   const navigate = useNavigate()
+  const [downloadingId, setDownloadingId] = useState<string | null>(null)
   const goToDetail = (id: string) =>
     navigate(`/hop-dong-nguyen-tac/bao-hiem-tich-luy-tai-xe/${id}`)
+
+  const handleDownloadPdf = async (row: MasterPolicyRow) => {
+    setDownloadingId(row.id)
+    try {
+      await downloadContractPdf(row)
+    } catch {
+      message.error('Không tạo được file hợp đồng. Vui lòng thử lại.')
+    } finally {
+      setDownloadingId(null)
+    }
+  }
 
   const columns: ColumnsType<MasterPolicyRow> = [
     {
@@ -77,7 +91,13 @@ export function MasterPoliciesTable({ rows, page, onPageChange }: MasterPolicies
       title: 'Liên kết',
       key: 'link',
       render: (_v, row) => (
-        <Button type="link" className="px-0" onClick={() => goToDetail(row.id)}>
+        <Button
+          type="link"
+          className="px-0"
+          icon={<DownloadOutlined />}
+          loading={downloadingId === row.id}
+          onClick={() => handleDownloadPdf(row)}
+        >
           Xem hợp đồng nguyên tắc
         </Button>
       ),
