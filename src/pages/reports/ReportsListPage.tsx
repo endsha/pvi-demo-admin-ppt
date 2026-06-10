@@ -28,7 +28,7 @@ export function ReportsListPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <Breadcrumb items={[{ title: 'Báo cáo Power BI' }, { title: 'Quản lý báo cáo' }]} />
+        <Breadcrumb items={[{ title: 'Báo cáo' }, { title: 'Quản lý báo cáo' }]} />
         <h1 className="text-xl font-semibold text-gray-800">Quản lý báo cáo</h1>
       </div>
       <ReportFiltersBar onSearch={handleSearch} onReset={handleReset} />
