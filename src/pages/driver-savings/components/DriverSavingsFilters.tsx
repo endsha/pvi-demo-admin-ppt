@@ -59,63 +59,60 @@ export function DriverSavingsFilters({ onSearch, onReset }: DriverSavingsFilters
   }
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      initialValues={initialValues}
-      className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm"
-    >
-      <Row gutter={[16, 16]} align="bottom">
-        <Col xs={24} md={6}>
-          <Form.Item label="Số điện thoại" name="phone" className="mb-0">
-            <Input placeholder="Nhập số điện thoại" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="ID chuyến đi" name="tripId" className="mb-0">
-            <Input placeholder="Nhập ID chuyến đi" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Biển số xe" name="plate" className="mb-0">
-            <Input placeholder="Nhập biển số xe" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Mã tài xế" name="driverCode" className="mb-0">
-            <Input placeholder="Nhập mã tài xế" allowClear />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Thời gian bắt đầu hiệu lực" name="effectiveRange" className="mb-0">
-            <RangePicker
-              className="w-full"
-              format="YYYY-MM-DD"
-              placeholder={['Từ ngày', 'Đến ngày']}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Thời gian tạo (Thời gian mua)" name="createdRange" className="mb-0">
-            <RangePicker
-              className="w-full"
-              format="YYYY-MM-DD"
-              placeholder={['Từ ngày', 'Đến ngày']}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6}>
-          <Form.Item label="Trạng thái đơn bảo hiểm" name="status" className="mb-0">
-            <Select options={statusOptions} allowClear placeholder="Chọn trạng thái" />
-          </Form.Item>
-        </Col>
-        <Col xs={24} md={6} className="flex items-end justify-end gap-2">
-          <Button onClick={handleReset}>Làm lại</Button>
-          <Button type="primary" onClick={handleSearch}>
-            Tìm kiếm
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+    <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
+      <Form form={form} layout="vertical" initialValues={initialValues}>
+        <Row gutter={[16, 16]} align="bottom">
+          <Col xs={24} md={6}>
+            <Form.Item label="Số điện thoại" name="phone" className="mb-0">
+              <Input placeholder="Nhập số điện thoại" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="ID chuyến đi" name="tripId" className="mb-0">
+              <Input placeholder="Nhập ID chuyến đi" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Biển số xe" name="plate" className="mb-0">
+              <Input placeholder="Nhập biển số xe" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Mã tài xế" name="driverCode" className="mb-0">
+              <Input placeholder="Nhập mã tài xế" allowClear />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Thời gian bắt đầu hiệu lực" name="effectiveRange" className="mb-0">
+              <RangePicker
+                className="w-full"
+                format="YYYY-MM-DD"
+                placeholder={['Từ ngày', 'Đến ngày']}
+              />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Thời gian tạo (Thời gian mua)" name="createdRange" className="mb-0">
+              <RangePicker
+                className="w-full"
+                format="YYYY-MM-DD"
+                placeholder={['Từ ngày', 'Đến ngày']}
+              />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6}>
+            <Form.Item label="Trạng thái đơn bảo hiểm" name="status" className="mb-0">
+              <Select options={statusOptions} allowClear placeholder="Chọn trạng thái" />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={6} className="flex items-end justify-end gap-2">
+            <Button onClick={handleReset}>Làm lại</Button>
+            <Button type="primary" onClick={handleSearch}>
+              Tìm kiếm
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+    </div>
   )
 }
