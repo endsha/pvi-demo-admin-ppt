@@ -22,7 +22,7 @@ export function buildPlaceholderValues(row: MasterPolicyRow): PlaceholderValues 
   const start = new Date(row.effectiveStart)
   return {
     Master_Policy_Number: row.contractNumber,
-    Driver_GSM_ID_Code: row.driverCode,
+    Driver_Grab_ID_Code: row.driverCode,
     Driver_Full_Name: row.customerName,
     Driver_Mobile_Number: row.phone,
     current_date: formatDate(row.effectiveStart),

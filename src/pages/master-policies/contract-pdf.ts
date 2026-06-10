@@ -1,7 +1,7 @@
 // Tải về file PDF Hợp đồng nguyên tắc: dùng đúng mẫu PDF gốc theo loại tài xế,
 // chỉ điền các biến của dòng (row) — giữ nguyên 100% bố cục template.
-import templateMotorcycleUrl from '../../assets/hdbh_templates/20240925_HDBH_Tai_xe_XE_MAY.pdf?url'
-import templateCarUrl from '../../assets/hdbh_templates/20240925_HDBH_Tai_xe_XE_O_TO.pdf?url'
+import templateMotorcycleUrl from '../../assets/hdbh_templates/20240925_HDBH_Tai_xe_XE_MAY.grab.pdf?url'
+import templateCarUrl from '../../assets/hdbh_templates/20240925_HDBH_Tai_xe_XE_O_TO.grab.pdf?url'
 import robotoUrl from '../../assets/fonts/Roboto-Regular.ttf?url'
 import { resolveVehicleType } from '../master-policy-detail/contract-terms'
 import type { MasterPolicyRow } from './mock-data'

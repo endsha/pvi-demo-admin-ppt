@@ -4,7 +4,7 @@
 
 export type PlaceholderKey =
   | 'Master_Policy_Number'
-  | 'Driver_GSM_ID_Code'
+  | 'Driver_Grab_ID_Code'
   | 'Driver_Full_Name'
   | 'Driver_DOB'
   | 'Driver_ID_Number'
@@ -30,7 +30,7 @@ export interface PlaceholderBox {
 
 export const PLACEHOLDER_BOXES: PlaceholderBox[] = [
   { key: 'Master_Policy_Number', page: 0, x0: 253.85, x1: 377.16, y0: 650.86, y1: 662.86, size: 12 },
-  { key: 'Driver_GSM_ID_Code', page: 0, x0: 230.25, x1: 351.56, y0: 556.58, y1: 568.58, size: 12 },
+  { key: 'Driver_Grab_ID_Code', page: 0, x0: 230.25, x1: 349.54, y0: 556.58, y1: 568.58, size: 12 },
   { key: 'Driver_Full_Name', page: 0, x0: 230.25, x1: 329.55, y0: 534.65, y1: 546.65, size: 12 },
   { key: 'Driver_DOB', page: 0, x0: 230.25, x1: 300.9, y0: 512.73, y1: 524.73, size: 12 },
   { key: 'Driver_ID_Number', page: 0, x0: 230.25, x1: 333.54, y0: 490.8, y1: 502.8, size: 12 },
